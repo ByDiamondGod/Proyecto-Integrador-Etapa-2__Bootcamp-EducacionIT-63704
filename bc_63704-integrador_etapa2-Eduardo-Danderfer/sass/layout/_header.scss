@@ -1,0 +1,236 @@
+/* ------------------------------------------------- */
+/* HEADER                                            */
+/* ------------------------------------------------- */
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    & {
+      flex-direction: column-reverse;
+      top: 0;
+      z-index: 3000;
+      position: sticky;
+    }
+  }
+}
+
+#menu {
+  display: none;
+  &:checked + .nav-bar {
+    display: block;
+  }
+
+  &:checked ~ .search-bar .menu-toogle__label {
+    background-color: $primary-color;
+  }
+}
+
+/* ------------------------------------------------- */
+/* NAVBAR                                            */
+/* ------------------------------------------------- */
+
+.nav-bar {
+  background-color: $primary-color;
+
+  &__nav-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0 0 20px;
+    @media (max-width: 768px) {
+      & {
+        flex-direction: column;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__nav-item {
+    text-align: center;
+    background-color: $primary-color;
+  }
+
+  &__nav-link {
+    display: block;
+    background-color: $primary-color;
+    color: #fff;
+    padding: 0.5em 1em;
+    margin: 5px 15px;
+    text-decoration: none;
+    text-shadow: 1.4px 1px 1px #000;
+    &:hover {
+      color: $tertiary-color;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      display: none;
+      animation: fade 0.3s ease-in-out;
+    }
+  }
+}
+
+/* ------------------------------------------------- */
+/* SEARCH BAR                                        */
+/* ------------------------------------------------- */
+
+.search-bar {
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1170px;
+  border-radius: 0px 0px 10px 10px;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+
+  &__logo-container,
+  &__form-container {
+    padding: 1em;
+  }
+
+  &__logo-container {
+    background-image: url(../img/logo.webp);
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 80px;
+    height: auto;
+    margin: auto 0px auto 10px;
+    cursor: pointer;
+    @media (max-width: 450px) {
+      & {
+        margin: auto 0px auto 10px;
+        background-size: auto;
+      }
+    }
+    @media (max-width: 420px) {
+      & {
+        width: 20px;
+        height: 20px;
+        margin: 15px 0 0 20px;
+        background-image: url(../img/logoM.webp);
+      }
+    }
+  }
+
+  &__form-container {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form-label {
+    background-color: $primary-color;
+    color: white;
+    margin: auto 20px auto auto;
+    font-size: 14px;
+  }
+
+  &__form-search {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    height: 30px;
+    width: 100%;
+    padding: 10px 200px 10px 15px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    @media (max-width: 768px) {
+      & {
+        width: 60%;
+        padding: 10px 30px 10px 15px;
+      }
+    }
+  }
+
+  &__form-submit {
+    background-color: $tertiary-color;
+    color: rgb(0, 0, 0);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    height: 30px;
+    width: 60px;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+  }
+
+  &__carrito-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 15px;
+    i {
+      margin-right: 44px;
+      color: $tertiary-color;
+      margin: 0 auto;
+    }
+  }
+}
+
+/* ------------------------------------------------ */
+/* MENÚ TOOGLE                                      */
+/* ------------------------------------------------ */
+
+.menu-toogle {
+  display: none;
+  background-color: red;
+  flex: 0 0 3em; /* shorthand (grow shrink basis) */
+  position: relative;
+  cursor: pointer;
+
+  &__label {
+    display: block;
+    background-color: $primary-color;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__top-bread, // pan de arriba
+    &__meat, // carne del medio
+    &__bottom-bread {
+    // pan de abajo
+    display: block;
+    background-color: #f5f5f5;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+  }
+
+  &__top-bread {
+    top: 0.8em;
+  }
+  &__meat {
+    top: 50%;
+    margin-top: -0.1em;
+  }
+  &__bottom-bread {
+    bottom: 0.8em;
+  }
+
+  @media (max-width: 768px) {
+    & {
+      display: block;
+      flex: 0 0 40px;
+    }
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

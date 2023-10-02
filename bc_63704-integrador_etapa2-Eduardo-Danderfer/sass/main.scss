@@ -1,0 +1,24 @@
+//? Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+//? Base
+@import "base/reset";
+@import "base/typography";
+
+//? Components
+@import "components/cards";
+@import "components/effects";
+// @import "components/loader";
+
+//? Layout
+@import "layout/footer";
+@import "layout/header";
+@import "layout/forms";
+
+//? Pages
+@import "pages/index";
+@import "pages/alta";
+@import "pages/carrito";
+@import "pages/contacto";
+@import "pages/nosotros";

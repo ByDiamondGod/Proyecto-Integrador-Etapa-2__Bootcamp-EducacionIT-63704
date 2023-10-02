@@ -1,0 +1,2 @@
+o	URL GitHub (https://github.com/ByDiamondGod/Proyecto-Integrador-Etapa-1__Bootcamp-EducacionIT-63704)
+o	URL Netlify (https://galaxyshop-eddev.netlify.app/)
