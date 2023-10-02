@@ -1,6 +1,9 @@
-# Proyecto Integrador: Etapa 1 de 3
+# Proyecto Integrador: Etapa 2 de 3
    
 ## Inicio de proyecto aplicando:
+  
+  🔹 React
+
   🔸 Vite
   
   🔹 HTML - CSS
@@ -10,11 +13,14 @@
   🔹 Nomenclatura BEM (Metodología)
   
 
-## ¿Como será la primera etapa?
-   +  Estilos libres, pero con condiciones
-   +  Full responsive aplicando mobile first
-   +  4 HTML distintos (Inicio la página principal  - Alta – Contacto – Nosotros)
-  
-   ✅ Dificultad:  Intermedia
+## ¿Como será la segunda etapa?
    
-   ☢️ Obstáculos:  Mínimos 
+   +  Migrar proyecto de la Etapa 1 a React
+   +  Libre sin restricciones
+   +  Se puede utilizar cualquier framework de CSS
+   +  Se puede utilizar cualquier framework de JS
+   +  1 HTML con logica (Alta)
+  
+   ✅ Dificultad:  Alta
+   
+   ☢️ Obstáculos:   
