@@ -1,0 +1,67 @@
+@use "variables" as var;
+
+@mixin heading {
+  font-size: var.$font-size-title;
+  background: var.$h1-color;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+@mixin paragraph {
+  font-size: var.$font-size-title-p;
+  font-weight: 400;
+  background: var.$p-color;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+@mixin top-information {
+  .section-cards {
+    background-color: var.$secundary-color;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 1300px;
+    &__header {
+      text-align: center;
+      margin-bottom: 20px;
+
+      h1 {
+        @include heading;
+      }
+
+      p {
+        @include paragraph;
+      }
+
+      span.Typewriter__cursor {
+        color: #bccada;
+      }
+    }
+  }
+}
+
+@mixin headings {
+  .headings {
+    background-color: var.$secundary-color;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 1300px;
+    &__header {
+      text-align: center;
+
+      h1 {
+        @include heading;
+      }
+
+      span {
+        @include paragraph;
+      }
+
+      span.Typewriter__cursor {
+        color: #bccada;
+      }
+      // Hago un span para los otros html, ya que tuve que dejar exclusivamente el p para el index, porque
+      // se me repetía el texto del p en todas las paginas, ya que no le puedo poner una ID
+    }
+  }
+}

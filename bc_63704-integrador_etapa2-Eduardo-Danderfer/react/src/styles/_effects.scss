@@ -1,0 +1,13 @@
+body::-webkit-scrollbar {
+  width: 4px;
+}
+body::-webkit-scrollbar-thumb {
+  background: $tertiary-color;
+}
+::selection {
+  background: #e7e7e713;
+}
+
+html {
+  scroll-behavior: smooth;
+}
