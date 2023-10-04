@@ -1,11 +1,11 @@
 //? Abstracts
-@import "styles/variables";
-@import "styles/mixins";
+@import "sass/variables";
+@import "sass/mixins";
 
 //? Base
-@import "styles/reset";
-@import "styles/typography";
-@import "styles/effects";
+@import "sass/reset";
+@import "sass/typography";
+@import "sass/effects";
 
 //? Components
-@import "styles/forms";
+@import "sass/forms";
