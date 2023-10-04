@@ -1,5 +1,8 @@
 import './Header.scss'
 import Navbar from './Navbar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Importa el ícono del carrito de compras
+
 
 const Header = () => {
   return (
@@ -18,7 +21,7 @@ const Header = () => {
             <input type="submit" className="search-bar__form-submit" value="Buscar"/>
           </form>
 
-          <div className="search-bar__carrito-container"> <i className="fa-solid fa-cart-shopping fa-xl"></i></div>
+          <div className="search-bar__carrito-container"> <FontAwesomeIcon className='carrito-color' icon={faShoppingCart} size="xl" /> </div>
 
           <div className="menu-toogle">
             <label htmlFor="menu" className="menu-toogle__label">

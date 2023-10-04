@@ -1,4 +1,6 @@
 import './Footer.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -60,20 +62,21 @@ const Footer = () => {
     <div className="main-footer__container-bottom">
       <div className="main-footer__social">
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="main-footer__social-link">
-          <i className="fab fa-facebook fa-xl"></i>
+          <FontAwesomeIcon icon={faFacebook} size="xl" />
         </a>
         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="main-footer__social-link">
-          <i className="fab fa-instagram fa-xl"></i>
+          <FontAwesomeIcon icon={faInstagram} size="xl" />
         </a>
         <a href="#" target="_blank" className="main-footer__social-link">
-          <i className="fab fa-whatsapp fa-xl"></i>
+          <FontAwesomeIcon icon={faWhatsapp} size="xl" />
         </a>
       </div>
+    </div>
       <div className="main-footer__info">
         <p className="main-footer__info-text">© 2023 ∾ Eddev</p>
       </div>
 
-    </div>
+
   </footer>
 </>
   )
