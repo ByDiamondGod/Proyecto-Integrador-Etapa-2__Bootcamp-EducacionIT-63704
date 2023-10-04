@@ -1,0 +1,45 @@
+@import '../sass/variables.scss';
+
+.nav-bar {
+  background-color: $primary-color;
+
+  &__nav-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0 0 20px;
+    @media (max-width: 768px) {
+      & {
+        flex-direction: column;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__nav-item {
+    text-align: center;
+    background-color: $primary-color;
+  }
+
+  &__nav-link {
+    display: block;
+    background-color: $primary-color;
+    color: #fff;
+    padding: 0.5em 1em;
+    margin: 5px 15px;
+    text-decoration: none;
+    text-shadow: 1.4px 1px 1px #000;
+    &:hover {
+      color: $tertiary-color;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      display: none;
+      animation: fade 0.3s ease-in-out;
+    }
+  }
+}
