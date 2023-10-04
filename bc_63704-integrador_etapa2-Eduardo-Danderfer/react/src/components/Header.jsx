@@ -21,7 +21,7 @@ const Header = () => {
             <input type="submit" className="search-bar__form-submit" value="Buscar"/>
           </form>
 
-          <div className="search-bar__carrito-container"> <FontAwesomeIcon className='search-bar__carrito-color' icon={faShoppingCart} size="xl" /> </div>
+          <div className="search-bar__carrito-container"> <FontAwesomeIcon className='search-bar__carrito-color' icon={faShoppingCart} size="xl"/> </div>
 
           <div className="menu-toogle">
             <label htmlFor="menu" className="menu-toogle__label">
