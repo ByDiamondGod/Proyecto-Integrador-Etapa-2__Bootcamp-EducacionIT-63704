@@ -125,15 +125,14 @@
     margin-right: 15px;
   }
 
-}
-
-.carrito-color {
-    margin-right: 44px;
-    color: $tertiary-color;
-    margin: 0 10px;
-    margin: auto 0;
-    min-width: 30px;
-    height: 30px;
+  &__carrito-color {
+      margin-right: 44px;
+      color: $tertiary-color;
+      margin: 0 10px;
+      margin: auto 0;
+      min-width: 30px;
+      height: 25px;
+  }
 }
 
 /* ------------------------------------------------ */
