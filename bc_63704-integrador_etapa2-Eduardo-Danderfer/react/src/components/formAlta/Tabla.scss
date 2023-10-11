@@ -1,0 +1,57 @@
+@import '../../sass/variables.scss';
+
+thead {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.alta-table {
+    width: clamp(300px, 80%, 1800px);
+    margin: 2rem auto;
+    background-color: #000;
+    border-collapse: collapse;
+}
+
+.alta-table th,
+.alta-table td {
+    padding: 1rem;
+    text-align: center;
+    color: #ddd;
+    border: none;
+}
+
+
+@media (max-width: 1600px) {
+
+    .alta-table {
+        &__description {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    thead {
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .alta-table th,
+    .alta-table td {
+        font-size: 14px;
+    }
+
+    .alta-table th {
+        display: none;
+    }
+
+    .alta-table td {
+        display: block;
+    }
+
+    .alta-table td::before {
+        content: attr(data-label);
+        display: inline-block;
+    }
+}
+
