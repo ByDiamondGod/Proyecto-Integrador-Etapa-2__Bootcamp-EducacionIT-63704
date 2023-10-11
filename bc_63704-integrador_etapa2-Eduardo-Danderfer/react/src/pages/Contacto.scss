@@ -1,0 +1,238 @@
+@import "../sass/variables.scss" ;
+@import "../sass/mixins.scss" ;
+
+// ------ Form ------ //
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  background-color: $secundary-color;
+  padding: 0em 1em 1em 1em;
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 90%;
+  background: #000000;
+  padding: 50px;
+  border-radius: 15px;
+  margin-top: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  &__entry-area,
+  &__select {
+    position: relative;
+    color: #ccc;
+    height: 80px;
+    line-height: 80px;
+    margin: auto auto 45px auto;
+  }
+
+  input,
+  select,
+  textarea {
+    color: #ccc;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    border-radius: 10px;
+    line-height: 80px;
+    position: absolute;
+    padding: 0 25px;
+    outline: none;
+    width: 100%;
+    z-index: 1000;
+    transition: 0.1s ease;
+    font-size: $font-size-title-form;
+  }
+
+ 
+
+  select,
+  textarea {
+    font-family: 'Open Sans', sans-serif;  /* Placeholder styles */
+    background-color: #000;
+    font-size: $font-size-title-form;
+    margin: 0 auto;
+  }
+
+  select {
+    cursor: pointer;
+  }
+
+  textarea {
+    resize: none;
+    height: 170px;
+  }
+
+  option {
+    font-size: 16px;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: #000;
+    }
+    &:checked {
+      color: #000;
+      background: $tertiary-color;
+      font-weight: bold;
+    }
+    &:invalid {
+      color: #ccc;
+      background: #000;
+    }
+  }
+
+  &__labels {
+    display: block;
+    position: absolute;
+    font-size: $font-size-title-form;
+    padding: 0 10px;
+    margin: 0 20px;
+    background-color: #000;
+    transition: 0.2s ease;
+  }
+
+  .form-container {
+    &__textarea {
+      &:focus,
+      &:not(:placeholder-shown) {
+        border-color: $tertiary-color;
+      }
+      /* La propiedad de arriba, mantiene de forma distinta 
+      con sus pseudoclases el textarea, diferente a los input, 
+      al seleccionarlo, hacer tab o escribir  */
+    }
+  }
+
+  .form-container {
+    &__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 110px auto auto;
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+
+      .form-container__button {
+        color: #ccc;
+        margin: auto 20px;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        background-color: #000;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        transition: border-color 0.3s, color 0.3s;
+        font-size: 16px;
+        border-radius: 10px;
+
+        &--send {
+          &:hover {
+            border: 1px solid $tertiary-color;
+            color: $tertiary-color;
+          }
+        }
+
+        &--delete {
+          &:hover {
+            border: 1px solid #ff0000;
+            color: #ff0000;
+          }
+        }
+      }
+    }
+  }
+
+  input:focus,
+  input:valid {
+    border: 2px solid $tertiary-color;
+  }
+
+  input:focus + &__labels,
+  input:valid + &__labels {
+    color: $tertiary-color;
+    height: 30px;
+    padding: 0 8px;
+    line-height: 30px;
+    transform: translate(-15px, -16px) scale(0.88);
+    z-index: 1000;
+  }
+
+  textarea::placeholder {
+    color: #ccc; 
+  }
+
+  select:focus,
+  select:valid {
+    border: 2px solid $tertiary-color;
+  }
+
+  select:focus + &__labels,
+  select:valid + &__labels {
+    color: $tertiary-color;
+    height: 30px;
+    padding: 0 8px;
+    line-height: 30px;
+    transform: translate(-15px, -16px) scale(0.88);
+    z-index: 1000;
+  }
+}
+
+// ------ Ovnis bottom ------ //
+
+.ovni-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: $secundary-color;
+  max-width: 900px;
+  height: auto;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  background-color: transparent;
+
+  &__ovni {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto auto 15px;
+  }
+
+  &__capsule {
+    background-color: rgb(0, 0, 0);
+    width: 60px;
+    height: 50px;
+    border-radius: 200px 200px 0px 0px;
+    border: 1px solid $tertiary-color;
+    border-bottom: none; 
+  }
+
+  &__icon {
+    display: block;
+    width: 40px;
+    height: 20px;
+    color: white;
+    font-size: 16px;
+    margin: 18px auto 0 auto;
+  }
+
+  &__dish {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid $tertiary-color;
+    border-bottom: none;
+    width: 150px;
+    height: 35px;
+    border-radius: 200px 200px 0px 0px;
+  }
+  &__dish-text {
+    color: white;
+    font-size: 11px;
+    margin-top: 9px;
+  }
+}
+
