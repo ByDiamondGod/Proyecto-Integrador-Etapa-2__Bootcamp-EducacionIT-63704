@@ -14,8 +14,6 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { ItemProvider } from './contexts/ItemContext'
 
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ItemProvider>
@@ -29,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/contacto' element={<Contacto/>} />
         <Route path='/nosotros' element={<Nosotros/>} />
         <Route path='/carrito' element={<Carrito/>} />
-        <Route path='*' element={<Inicio/>} />  {/* Componente si hay un error se usa el * */}
+        <Route path='*' element={<Inicio/>} />  {/* Componente si hay un error se usa el, estaria bueno que diga 404 not found * */}
       </Routes>
 
       <Footer />
