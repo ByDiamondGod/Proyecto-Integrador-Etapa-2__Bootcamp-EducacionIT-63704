@@ -4,7 +4,6 @@ import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-sv
 
 const Footer = () => {
   return (
-    <>
     <footer className="main-footer">
     <div className="main-footer__container-top">
 
@@ -67,7 +66,7 @@ const Footer = () => {
         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="main-footer__social-link">
           <FontAwesomeIcon icon={faInstagram} size="xl" />
         </a>
-        <a href="#" target="_blank" className="main-footer__social-link">
+        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" className="main-footer__social-link">
           <FontAwesomeIcon icon={faWhatsapp} size="xl" />
         </a>
       </div>
@@ -78,7 +77,6 @@ const Footer = () => {
 
 
   </footer>
-</>
   )
 }
 
