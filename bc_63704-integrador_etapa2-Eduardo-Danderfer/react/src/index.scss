@@ -6,3 +6,7 @@
 @import "sass/reset";
 @import "sass/typography";
 @import "sass/effects";
+
+//? Using mixins
+
+@include headings;
