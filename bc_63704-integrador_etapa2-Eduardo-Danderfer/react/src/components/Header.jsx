@@ -1,7 +1,10 @@
 import './Header.scss'
 import Navbar from './Navbar'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Importa el ícono del carrito de compras
+
+import { Link } from 'react-router-dom'; 
 
 
 const Header = () => {
@@ -13,7 +16,10 @@ const Header = () => {
         <Navbar />
 
         <div className="search-bar">
-          <div className="search-bar__logo-container"></div>
+
+          <Link to="/inicio" className="search-bar__logo-container">
+            <div ></div>
+          </Link>
 
           <form action="#" className="search-bar__form-container">
             <label htmlFor="busqueda" className="search-bar__form-label">Buscar</label>
