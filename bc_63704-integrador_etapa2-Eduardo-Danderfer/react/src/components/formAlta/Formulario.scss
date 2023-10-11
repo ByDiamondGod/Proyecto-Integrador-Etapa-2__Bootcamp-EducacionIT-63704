@@ -1,0 +1,149 @@
+@import '../../sass/variables.scss';
+
+.alta-form {
+    &__title {
+        color: #ddd;
+        font-size: clamp(14px, 2.5vw, 20px);
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: clamp(300px, 80%, 800px);
+        padding: 20px;
+        background-color: rgb(0, 0, 0);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-top: none;
+        width: clamp(300px, 80%, 800px);
+        margin: 0 auto;
+        background-color: rgb(0, 0, 0);
+        color: #ddd;
+    }
+
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: clamp(300px, 90%, 800px);
+        margin: 10px 0px 5px 0px;
+    }
+
+    &__label {
+        color: #eee;
+        font-size: clamp(15px, 2.5vw, 20px);
+        text-align: center;
+        width: clamp(100px, 20%, 800px);
+        padding: 10px;
+        background-color: rgb(0, 0, 0);
+    }
+
+    &__input {
+        color: #bbb;
+        font-size: clamp(15px, 2.5vw, 20px);
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: clamp(200px, 90%, 800px);
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    &__input:focus {
+      background-color: rgba(255, 255, 255, 0.040);
+      outline: none; 
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__button {
+        color: #ddd;
+        margin: 20px 20px;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        background-color: #000;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        transition: border-color 0.3s, color 0.3s;
+        font-size: 16px;
+        border-radius: 10px;
+
+        &--send {
+            &:hover {
+                border: 2px solid $tertiary-color;
+                color: $tertiary-color;
+            }
+        }
+
+        &--delete {
+            &:hover {
+                border: 2px solid #ff0000;
+                color: #ff0000;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .alta-form {
+        &__button {
+            margin: 20px 10px;
+            width: 100px;
+        }
+    }
+}
+
+// button send
+
+.alta-form {
+    &__input-container {
+        position: relative;
+    }
+
+    &__input[type='checkbox'] {
+        top: 40px;
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        width: 50px;
+        height: 40px;
+        z-index: 1000;
+    }
+
+    &__custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 4px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: #aaa;
+            border-radius: 2px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+
+    .alta-form__input[type='checkbox']:checked
+        + .alta-form__custom-checkbox::after {
+        opacity: 1;
+    }
+}
