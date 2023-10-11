@@ -1,10 +1,17 @@
 @use "../sass/mixins" as mixins;
 
-@include mixins.top-information;
+// Utilize use para agregar un alias, de cualquier forma funciona con @import, pero no permite usar alias as
+// lo aplico solo aca, para recordar que hay otra forma de importar
+
+.hero {
+  margin: 0 auto;
+  max-width: 1300px;
+}
 
 .cards-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
-  justify-content: center;
+  margin-top: 5px;
 }
