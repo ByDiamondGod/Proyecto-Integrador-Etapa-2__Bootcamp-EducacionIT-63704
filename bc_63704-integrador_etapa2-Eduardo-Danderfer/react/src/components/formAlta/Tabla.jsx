@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import ItemContext from '../../contexts/ItemContext';
+import PropTypes from 'prop-types';
+
 import TablaFila from './TablaFila';
 
 import './Tabla.scss';
 
-const Tabla = () => {
+const Tabla = ( {setItemToUpdate} ) => {
     const {items} = useContext(ItemContext)
 
     return (
@@ -24,11 +26,15 @@ const Tabla = () => {
             </thead>
             <tbody className='alta-table__body'>
                 {items && items.map((item, id) => (
-                    <TablaFila key={id} item={item} />
+                    <TablaFila key={id} item={item} setItemToUpdate={setItemToUpdate} />
                 ))}
             </tbody>
         </table>
     );
+};
+
+Tabla.propTypes = {
+    setItemToUpdate: PropTypes.func.isRequired
 };
 
 export default Tabla;
