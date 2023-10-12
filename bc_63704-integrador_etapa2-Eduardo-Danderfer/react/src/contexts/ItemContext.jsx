@@ -4,7 +4,7 @@ import { get, post, del, put } from '../utils/http';
 
 const ItemContext = createContext();
 
-const url = 'http://localhost:8080/productos/';
+const url = import.meta.env.VITE_URL;
 
 const ItemProvider = ({ children }) => {
     const [items, setItems] = useState(null);
