@@ -1,5 +1,6 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ItemContext from '../../contexts/ItemContext';
+import PropTypes from 'prop-types';
 
 import './Formulario.scss';
 
@@ -19,11 +20,16 @@ const initForm = {
 }
 
 
-const Formulario = () => {
+const Formulario = ({itemToUpdate, setItemToUpdate}) => {
 
   // CREATE
   const [form, setForm] = useState(initForm)
-  const {createItemContext} = useContext(ItemContext)
+  const {createItemContext, updateItemContext} = useContext(ItemContext)
+
+  // Update => PUT [77]
+  useEffect(() => {
+    itemToUpdate ? setForm(itemToUpdate) : setForm(initForm)
+  }, [itemToUpdate, setItemToUpdate])
 
   // Carga de informacion en el formulario [58]
   const handleChange = (e) => {
@@ -47,10 +53,23 @@ const Formulario = () => {
     e.preventDefault();
     console.log('Formulario enviado');
 
-    await createItemContext(form);
+    // [78]
+    try {
+      
+      if (form.id === null) {
+        await createItemContext(form);
+        
+      } else {
+        await updateItemContext(form);
+      }
+  
+      // resetea al enviar un nuevo producto
+      handleReset();
 
-    // resetea al enviar un nuevo producto
-    handleReset();
+    } catch (error) {
+      console.error('Error found in handleSubmit:', error);
+    }
+
   };
 
 
@@ -224,5 +243,10 @@ const Formulario = () => {
     </div>
   );
 }
+
+Formulario.propTypes = {
+  itemToUpdate: PropTypes.object,
+  setItemToUpdate: PropTypes.func.isRequired
+};
 
 export default Formulario;
