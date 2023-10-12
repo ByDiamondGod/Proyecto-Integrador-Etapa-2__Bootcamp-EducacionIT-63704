@@ -3,10 +3,10 @@ import { useContext } from 'react';
 import ItemContext from '../../contexts/ItemContext';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
-
 import './TablaFila.scss';
 
-const TablaFila = ({ item }) => {
+const TablaFila = ({ item, setItemToUpdate} ) => {
+
     const { deleteItemContext } = useContext(ItemContext);
 
     const handleDelete = (id) => {
@@ -38,20 +38,33 @@ const TablaFila = ({ item }) => {
         });
           
         /*  console.warn(id);
-
         let isDelete = window.confirm(`¿Estas seguro de eliminar este producto? ${id}`);
-
         if (isDelete) {
             deleteItemContext(id);
-           
         } else {
             return // stop = break
         } */
-
-        
-
     }
 
+    const handleUpdate = (item) => {
+        Swal.fire({
+            title: '¿Deseas editar?',
+            text: `${item.name}`,
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Editar',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // El usuario ha confirmado la edición
+                setItemToUpdate(item);
+
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                // El usuario ha cancelado la edición
+
+            }
+        });
+    }
 
     return (
         <tr className='alta-table__row'>
@@ -67,7 +80,8 @@ const TablaFila = ({ item }) => {
             <td>{item.send ? 'Si' : 'No'}</td>
             <td>
                 <div className='alta-table__buttons-row'>
-                    <button className='alta-table__button-row alta-table__button-row--send'>
+                    <button className='alta-table__button-row alta-table__button-row--send'
+                            onClick={() => handleUpdate(item)}>
                         Editar
                     </button>
                     <button className='alta-table__button-row alta-table__button-row--delete'
