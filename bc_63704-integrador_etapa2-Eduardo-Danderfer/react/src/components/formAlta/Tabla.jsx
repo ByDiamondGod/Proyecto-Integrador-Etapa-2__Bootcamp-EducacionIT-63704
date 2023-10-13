@@ -33,6 +33,7 @@ const Tabla = ( {setItemToUpdate} ) => {
     );
 };
 
+/* [84] */
 Tabla.propTypes = {
     setItemToUpdate: PropTypes.func.isRequired
 };

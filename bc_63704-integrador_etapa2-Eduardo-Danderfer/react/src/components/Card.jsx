@@ -25,6 +25,7 @@ const Card = ({ propItems }) => {
   )
 }
 
+/* [84] */
 Card.propTypes = {
   propItems: PropTypes.shape({
     pic: PropTypes.string.isRequired,

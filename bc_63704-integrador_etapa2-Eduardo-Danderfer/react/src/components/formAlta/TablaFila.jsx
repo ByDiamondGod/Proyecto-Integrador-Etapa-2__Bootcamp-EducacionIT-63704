@@ -1,7 +1,8 @@
-/* eslint-disable react/prop-types */
+
 import { useContext } from 'react';
 import ItemContext from '../../contexts/ItemContext';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import PropTypes from 'prop-types';
 
 import './TablaFila.scss';
 
@@ -94,5 +95,20 @@ const TablaFila = ({ item, setItemToUpdate} ) => {
     );
 };
 
+/* [84] */
+TablaFila.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        stock: PropTypes.number.isRequired,
+        company: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+        pic: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        send: PropTypes.bool.isRequired,
+    }).isRequired,
+    setItemToUpdate: PropTypes.func.isRequired,
+}
 
 export default TablaFila;

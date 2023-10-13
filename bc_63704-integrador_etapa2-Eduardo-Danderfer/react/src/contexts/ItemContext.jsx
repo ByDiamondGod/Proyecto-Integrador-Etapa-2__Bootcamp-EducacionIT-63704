@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, createContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { get, post, del, put } from '../utils/http';
@@ -41,7 +42,7 @@ const ItemProvider = ({ children }) => {
     const deleteItemContext = async id => {
         try {
             const deleteItem = await del(url, id);
-            console.log(deleteItem);
+            // console.log(deleteItem);
             const nuevaDB = items.filter(item => item.id !== id);
             setItems(nuevaDB);
         } catch (error) {
@@ -54,7 +55,7 @@ const ItemProvider = ({ children }) => {
     const updateItemContext = async itemToUpdate => {
         try {
             const updateItem = await put(url, itemToUpdate.id, itemToUpdate);
-            console.log(updateItem);
+            // console.log(updateItem);
             const nuevaDB = items.map(item => item.id === itemToUpdate.id ? itemToUpdate : item);
             setItems(nuevaDB);
         } catch (error) {
@@ -67,6 +68,7 @@ const ItemProvider = ({ children }) => {
     return <ItemContext.Provider value={data}>{children}</ItemContext.Provider>;
 };
 
+/* [84] */
 ItemProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
