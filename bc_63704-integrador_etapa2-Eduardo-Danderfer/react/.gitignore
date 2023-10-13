@@ -9,6 +9,7 @@ lerna-debug.log*
 
 .env
 todo.md
+anotaciones.md
 node_modules
 dist
 dist-ssr
