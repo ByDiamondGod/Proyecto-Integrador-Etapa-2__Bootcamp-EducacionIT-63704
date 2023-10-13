@@ -35,23 +35,29 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
   const handleChange = (e) => {
 
     const { type, name, checked, value } = e.target
+
+    /* Validación [83] */
+    if (name === "price" || name === "stock") {
+      // Si el valor no es un número válido, no lo actualices en el estado
+      if (!/^\d*\.?\d*$/.test(value)) {
+        return;
+      }
+    }
+    
+    /* Pasar al backend number para price y stock evitando strings[83] */
+    const numericValue = name === "price" || name === "stock" ? parseFloat(value) : value;
+
     setForm({
       ...form,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : numericValue,
     })
   };
 
-    /*      value = {form.name}
-            onChange={handleChange}
-            checked = {form.send}
-    */
-
-  
   // Envio de informacion en el formulario [59]
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-    console.log('Formulario enviado');
+    // console.log('Formulario enviado');
 
     // [78]
     try {
@@ -117,7 +123,7 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
           <label htmlFor="price" className='alta-form__label'>Precio</label>
           <input
             className='alta-form__input'
-            type="text"
+            type="number"
             name="price"
             id="price"
             placeholder={focusedField === 'precio' ? '' : 'Precio en USD'}
@@ -135,7 +141,7 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
           <label htmlFor="stock" className='alta-form__label'>Stock</label>
           <input
             className='alta-form__input'
-            type="text"
+            type="number"
             name="stock"
             id="stock"
             placeholder={focusedField === 'stock' ? '' : 'Cantidad en stock'}
@@ -213,7 +219,6 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
             placeholder={focusedField === 'foto' ? '' : 'URL de la imagen del producto'}
             onFocus={() => handleFocus('foto')}
             onBlur={handleBlur}
-            required
             maxLength="40"
             value = {form.pic}
             onChange={handleChange}
@@ -244,6 +249,7 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
   );
 }
 
+/* [84] */
 Formulario.propTypes = {
   itemToUpdate: PropTypes.object,
   setItemToUpdate: PropTypes.func.isRequired
