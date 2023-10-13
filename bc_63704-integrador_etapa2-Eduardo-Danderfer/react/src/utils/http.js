@@ -60,7 +60,7 @@ export const del = async (url, id) => {
     }
 
     const urlFull = url + id
-    console.log(urlFull);
+    // console.log(urlFull);
 
     const response = await fetch(urlFull, config)
 
