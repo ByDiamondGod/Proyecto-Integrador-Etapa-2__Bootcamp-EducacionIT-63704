@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import ItemContext from '../../contexts/ItemContext';
 import PropTypes from 'prop-types';
 
+import { useFormChange } from '../../hooks/useFormChange';
 import './Formulario.scss';
 
 
@@ -23,35 +24,14 @@ const initForm = {
 const Formulario = ({itemToUpdate, setItemToUpdate}) => {
 
   // CREATE
-  const [form, setForm] = useState(initForm)
+  const [form, setForm, handleChange] = useFormChange(initForm) /* [89]  */
   const {createItemContext, updateItemContext} = useContext(ItemContext)
 
   // Update => PUT [77]
   useEffect(() => {
     itemToUpdate ? setForm(itemToUpdate) : setForm(initForm)
-  }, [itemToUpdate, setItemToUpdate])
+  }, [itemToUpdate, setForm, setItemToUpdate])
 
-  // Carga de informacion en el formulario [58]
-  const handleChange = (e) => {
-
-    const { type, name, checked, value } = e.target
-
-    /* Validación [83] */
-    if (name === "price" || name === "stock") {
-      // Si el valor no es un número válido, no lo actualices en el estado
-      if (!/^\d*\.?\d*$/.test(value)) {
-        return;
-      }
-    }
-    
-    /* Pasar al backend number para price y stock evitando strings[83] */
-    const numericValue = name === "price" || name === "stock" ? parseFloat(value) : value;
-
-    setForm({
-      ...form,
-      [name]: type === "checkbox" ? checked : numericValue,
-    })
-  };
 
   // Envio de informacion en el formulario [59]
   const handleSubmit = async (e) => {
