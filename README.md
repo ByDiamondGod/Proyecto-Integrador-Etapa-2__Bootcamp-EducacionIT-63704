@@ -12,15 +12,15 @@
   
   🔹 HTML - SCSS - JSX
   
-  🔹 Nomenclatura BEM (Metodología)
+  🔸 Nomenclatura BEM (Metodología)
   
 
 ## ¿Como será la segunda etapa?
    
    +  Migrar Etapa 1 a la Etapa 2 con React
    +  Utilizando react-router react-router-dom
-   +  Creacion de una pagina [Alta] con [CRUD] (100% funcional)
-   +  Creacion de una pagina [Carrito] con backend (100% funcional)
+   +  Creacion de una pagina Alta con CRUD (100% funcional)
+   +  Creacion de una pagina Carrito con backend (100% funcional)
    +  Se puede utilizar cualquier framework de CSS
    +  Se puede utilizar cualquier framework de JS
    +  Libre sin restricciones
@@ -39,8 +39,8 @@
    +  MockAPI
    +  Proptypes validations
    +  Regular Expressions
-
-   +  Creatividad con diseño moderno
+   +  Creatividad 
+   +  Diseño moderno
    +  Esfuerzo, dedicación y destreza
 
 ## ¿Como ejecutar el proyecto?
@@ -49,4 +49,4 @@
   2. Instalar dependencias en la terminal: `npm i`
   3. Ejecutar el proyecto en la terminal front-end: `npm run dev`
   4. Ejecutar el proyecto en la terminal back-end: `npm run server`
-  5. Agregar puertos para funcionar, en el archivo .env.example: (Secretos de desarrollo | Contactarme)
+  5. Agregar puertos para funcionar: (Secretos de desarrollo, contactarme)
