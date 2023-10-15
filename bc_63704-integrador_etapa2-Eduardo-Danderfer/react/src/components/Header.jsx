@@ -1,10 +1,10 @@
 import './Header.scss'
 import Navbar from './Navbar'
+import { Link } from 'react-router-dom'; 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Importa el ícono del carrito de compras
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { Link } from 'react-router-dom'; 
 
 
 const Header = () => {
@@ -17,17 +17,15 @@ const Header = () => {
 
         <div className="search-bar">
 
-          <Link to="/inicio" className="search-bar__logo-container">
-            <div ></div>
-          </Link>
+          <Link to="/inicio" className="search-bar__logo-container"> </Link>
 
           <form action="#" className="search-bar__form-container">
-            <label htmlFor="busqueda" className="search-bar__form-label">Buscar</label>
+            <label htmlFor="busqueda" className="search-bar__form-label"></label>
             <input type="search" className="search-bar__form-search" id="busqueda" />
             <input type="submit" className="search-bar__form-submit" value="Buscar"/>
           </form>
 
-          <div className="search-bar__carrito-container"> <FontAwesomeIcon className='search-bar__carrito-color' icon={faShoppingCart} size="xl"/> </div>
+          <Link className="search-bar__carrito-container" to= "/carrito"> <FontAwesomeIcon className='search-bar__carrito-color' icon={faShoppingCart} size="xl"/> </Link>
 
           <div className="menu-toogle">
             <label htmlFor="menu" className="menu-toogle__label">
