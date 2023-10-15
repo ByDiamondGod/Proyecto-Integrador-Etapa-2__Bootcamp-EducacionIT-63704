@@ -5,8 +5,8 @@
       "name": "Luna",
       "description": "¡Compra terreno en la Luna! El satélite natural de La Tierra. Viene con documentos (Escritura Lunar, Mapa Lunar y Coordenadas). Más de cinco millones de personas ya adquirieron un terreno lunar",
       "pic": "img/moon.webp",
-      "price": 699.00,
-      "stock": 50000,
+      "price": 699,
+      "stock": 5253,
       "company": "Lunar Estates",
       "category": "Terrenos Lunares",
       "send": true
@@ -16,8 +16,8 @@
       "name": "Marte",
       "description": "¡Compra terreno en Marte! Colonizar Marte es nuestro futuro. Viene con documentos (La Escritura Marciana, Mapa Marciano, Coordenadas y Restricciones Marcianas). ¡Un día, tus nietos te lo agradecerán!",
       "pic": "img/mars.webp",
-      "price": 599.00,
-      "stock": 10000,
+      "price": 599.99,
+      "stock": 1358,
       "company": "Mars Realty",
       "category": "Terrenos Marcianos",
       "send": true
@@ -27,8 +27,8 @@
       "name": "Mercurio",
       "description": "¡Compra terreno en Mercurio! Viene con documentos (La Escritura de Mercurio, Mapa de Mercurio y sus Coordenadas). A pesar de sus extremas condiciones, es un planeta fascinante para la investigación científica",
       "pic": "img/mercury.webp",
-      "price": 525.99,
-      "stock": 5000,
+      "price": 525,
+      "stock": 5173,
       "company": "Solar Properties",
       "category": "Terrenos Mercurianos",
       "send": true
@@ -38,19 +38,19 @@
       "name": "Plutón",
       "description": "¡Compra Plutón en su totalidad! Viene con Derechos Minerales y documentos (Escritura, Mapa y Coordenadas). Si extraes minerales en su propiedad con fines de lucro, el 5% de tus ingresos se deberán pagar a Galaxy Shop",
       "pic": "img/pluto.webp",
-      "price": 250000.00,
+      "price": 250000,
       "stock": 1,
       "company": "Galactic Real Estate",
       "category": "Planetas Enanos",
-      "send": false
+      "send": true
     },
     {
       "id": 5,
       "name": "Venus",
       "description": "¡Compra terreno en Venus! Viene con documentos (Escritura y Coordenadas). Contiene paisajes volcánicos y deslumbrantes nubes ácidas que te asombrarán. ¡Una experiencia única en la exploración espacial!",
       "pic": "img/venus.webp",
-      "price": 405.80,
-      "stock": 5000,
+      "price": 405,
+      "stock": 5283,
       "company": "Venus Ventures",
       "category": "Terrenos Venusianos",
       "send": true
@@ -60,9 +60,9 @@
       "name": "Ío",
       "description": "¡Compra terreno en Ío! Viene con documentos (Escritura y Coordenadas). Es el satélite de Júpiter, el cuerpo con más actividad volcánica. ¡400 volcanes y expulsiones de material, que alimentan el anillo de Júpiter!",
       "pic": "img/io.webp",
-      "price": 360.50,
-      "stock": 8000,
-      "company": "Jupiter Estates",
+      "price": 360,
+      "stock": 8120,
+      "company": "Jupiter States",
       "category": "Terrenos de Satélites Jovianos",
       "send": true
     },
@@ -71,9 +71,9 @@
       "name": "Pasaporte",
       "description": "¡Compra aquí tu pasaporte! Obtén una nacionalidad extraterrestre. Válido para uso fuera del planeta Tierra, permiso para viajar en: Luna, Marte, Mercurio, Plutón (Venus e Ío actualmente no están disponibles)",
       "pic": "img/passport.webp",
-      "price": 30.00,
+      "price": 30,
       "stock": 9999,
-      "company": "Universal Passports Inc.",
+      "company": "Universal Passports Inc",
       "category": "Documentos Extraterrestres",
       "send": true
     },
@@ -82,18 +82,18 @@
       "name": "Traje astronauta",
       "description": "¡Compra tu traje para viajar! Descubre la experiencia espacial definitiva con nuestro traje de astronauta profesional de última generación, diseñado con seguridad y comodidad. ¡Cumple tu sueño de ser un verdadero astronauta!",
       "pic": "img/astronaut.webp",
-      "price": 5000.00,
+      "price": 5850,
       "stock": 100,
       "company": "Galactic Outfits",
       "category": "Trajes Espaciales",
-      "send": true
+      "send": false
     },
     {
       "id": 9,
       "name": "Viaje espacial",
       "description": "¡Compra tu próximo vuelo al espacio! Con más de 10 naves profesionales listas para despegar. Descubre la majestuosidad del espacio. Reserva ahora y prepárate para una experiencia inolvidable más allá de la Tierra",
       "pic": "img/rocket.webp",
-      "price": 1500000.00,
+      "price": 15196,
       "stock": 20,
       "company": "Stellar Travel Agency",
       "category": "Viajes Espaciales",
@@ -104,11 +104,12 @@
       "name": "Satélite WIFI",
       "description": "¡Compra tu conexión WIFI! ¿O acaso vas a estar desconectado? Diseñado para llevar la conectividad a nuevos planetas. Proporcionamos internet confiable, rápido y seguro. Explora, comunica y mantén el contacto con la Tierra",
       "pic": "img/wifi.webp",
-      "price": 200.00,
-      "stock": 100000,
+      "price": 200,
+      "stock": 1256,
       "company": "SpaceNet Communications",
       "category": "Tecnología Espacial",
-      "send": true
+      "send": false
     }
-  ]
+  ],
+  "carrito": []
 }
