@@ -81,7 +81,7 @@ const TablaFila = ({ item, setItemToUpdate} ) => {
             <td>{item.send ? 'Si' : 'No'}</td>
             <td>
                 <div className='alta-table__buttons-row'>
-                    <button className='alta-table__button-row alta-table__button-row--send'
+                    <button className='alta-table__button-row alta-table__button-row--edit'
                             onClick={() => handleUpdate(item)}>
                         Editar
                     </button>
