@@ -1,0 +1,15 @@
+.table-cart {
+    margin-top: 0;
+}
+
+.alta-table {
+  &__button-row {
+
+      &--send {
+          &:hover {
+              border: 1px solid #00ff00;
+              color: #00ff00;
+          }
+      }
+  }
+}
