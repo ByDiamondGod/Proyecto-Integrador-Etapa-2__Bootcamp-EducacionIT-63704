@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import ItemContext from '../../contexts/ItemContext';
 import PropTypes from 'prop-types';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { useFormChange } from '../../hooks/useFormChange';
 import './Formulario.scss';
 
@@ -25,12 +25,46 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
 
   // CREATE
   const [form, setForm, handleChange] = useFormChange(initForm) /* [89]  */
-  const {createItemContext, updateItemContext} = useContext(ItemContext)
+  const { createItemContext, updateItemContext } = useContext(ItemContext)
+  
+  // Aparece si se edita un producto [94]
+  const [isEditing, setIsEditing] = useState(false); //
 
   // Update => PUT [77]
   useEffect(() => {
-    itemToUpdate ? setForm(itemToUpdate) : setForm(initForm)
-  }, [itemToUpdate, setForm, setItemToUpdate])
+    if (itemToUpdate) {
+      setForm(itemToUpdate);
+      setIsEditing(true); 
+    } else {
+      setForm(initForm);
+      setIsEditing(false); 
+    }
+  }, [itemToUpdate, setForm, setItemToUpdate]);
+
+
+    // Función para mostrar notificación de envío exitoso
+    const showEnvioSuccessNotification = () => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Envío exitoso',
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 3000,
+      });
+    };
+  
+    // Función para mostrar notificación de edición exitosa
+    const showEdicionSuccessNotification = () => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Edición exitosa',
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 3000,
+      });
+    };
 
 
   // Envio de informacion en el formulario [59]
@@ -44,9 +78,11 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
       
       if (form.id === null) {
         await createItemContext(form);
+        showEnvioSuccessNotification()
         
       } else {
         await updateItemContext(form);
+        showEdicionSuccessNotification()
       }
   
       // resetea al enviar un nuevo producto
@@ -61,7 +97,8 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
 
   // Reset default de los inputs en el formulario [65]
   const handleReset= () => {
-   setForm(initForm);
+    setForm(initForm);
+    setIsEditing(false)
   };
 
 
@@ -78,7 +115,7 @@ const Formulario = ({itemToUpdate, setItemToUpdate}) => {
 
   return (
     <div className='alta-form'>
-      <h2 className='alta-form__title'>Agregar (Editar) producto</h2>
+      <h2 className='alta-form__title'>{isEditing ? 'Editar producto' : 'Agregar producto'}</h2>
       <form onSubmit={handleSubmit} className='alta-form__form'>
         <div className='alta-form__input-container'>
           <label htmlFor="lbl-name" className='alta-form__label'>Nombre</label>
