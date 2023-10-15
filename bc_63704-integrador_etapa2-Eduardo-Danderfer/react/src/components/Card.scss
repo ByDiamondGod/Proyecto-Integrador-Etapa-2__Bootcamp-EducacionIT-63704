@@ -1,10 +1,11 @@
 @import '../sass/variables.scss';
 
+
 .card {
   outline: none;
   width: 280px;
   max-width: 300px;
-  height: 400px;
+  height: 450px;
   overflow: hidden;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -78,4 +79,30 @@
       text-align: center;
     }
   }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #151819, #000001eb, #0d1214);
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid #ddd;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.03) skew(0);
+      transform-origin: bottom;
+      box-shadow: 0 7px 8px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
+      border: 1px solid $tertiary-color;
+      color: $tertiary-color;
+    }
+  }
 } 
+
