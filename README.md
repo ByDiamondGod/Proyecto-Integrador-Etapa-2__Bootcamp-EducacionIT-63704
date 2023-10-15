@@ -19,7 +19,8 @@
    
    +  Migrar Etapa 1 a la Etapa 2 con React
    +  Utilizando react-router react-router-dom
-   +  Creacion de una pagina [Alta] con [CRUD] 100% funcional
+   +  Creacion de una pagina [Alta] con [CRUD] (100% funcional)
+   +  Creacion de una pagina [Carrito] con backend (100% funcional)
    +  Se puede utilizar cualquier framework de CSS
    +  Se puede utilizar cualquier framework de JS
    +  Libre sin restricciones
@@ -35,8 +36,12 @@
    +  TypeWriter
    +  AOS
    +  FontAwesome
+   +  MockAPI
    +  Proptypes validations
    +  Regular Expressions
+
+   +  Creatividad con diseño moderno
+   +  Esfuerzo, dedicación y destreza
 
 ## ¿Como ejecutar el proyecto?
 
