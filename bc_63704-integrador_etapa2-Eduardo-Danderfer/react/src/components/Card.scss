@@ -2,16 +2,18 @@
 
 
 .card {
+  width: clamp(310px, 50%, 360px);
+  max-width: 400px;
   outline: none;
-  width: 280px;
-  max-width: 300px;
   height: 450px;
   overflow: hidden;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background: #0f2027; /* fallback for old browsers */
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  // background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  // background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #0a0a0a, #1b1b1b, #302e2e52);
+  background: -webkit-linear-gradient(to right, #0a0a0a, #1b1b1b, #302e2e52);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease-in-out;
 
@@ -24,7 +26,7 @@
 
   &__image-container {
     height: 200px;
-    width: 280px;
+    width: clamp(310px, 100%, 360px);
     background-image: url("/img/galaxy-card.webp");
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 200px, 0 190px); /* init */
@@ -73,17 +75,30 @@
   }
 
   &__description {
+    margin: 0 auto;
+    height: 100px;
+    width: clamp( 280px, 100%, 330px);
+
     p {
       font-size: 14px;
-      color: #fff;
+      color: #ccc;
       text-align: center;
+      text-wrap: wrap;
+      max-inline-size: 50ch;
+      text-wrap: balance
     }
   }
 
-  &__button {
+  .card__div-button {
     display: block;
+    width: 200px;
+    height: 90px;
     margin: 0 auto;
-    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__button {
+    margin-top: 30px;
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
@@ -104,5 +119,5 @@
       color: $tertiary-color;
     }
   }
-} 
+}
 

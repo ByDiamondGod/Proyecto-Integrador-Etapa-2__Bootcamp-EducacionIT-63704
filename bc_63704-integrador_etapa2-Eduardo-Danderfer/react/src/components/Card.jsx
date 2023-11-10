@@ -38,6 +38,8 @@ const Card = ({ propItems }) => {
             <div className="card__description">
               <p>{propItems.description}</p>
             </div>
+          </div>
+          <div className="card__div-button">
             <button
               className="card__button"
               onClick={() => handleClick(propItems)}>

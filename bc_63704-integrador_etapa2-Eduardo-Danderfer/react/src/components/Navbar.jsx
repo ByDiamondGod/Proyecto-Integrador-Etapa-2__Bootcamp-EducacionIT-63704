@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink to="/nosotros" className="nav-bar__nav-link">Nosotros</NavLink>
       </li>
     </ul>
-  </nav>
+    </nav>
   )
 }
 
